@@ -1,0 +1,40 @@
+-----
+-- Cut Scene - Old man in pub
+-----
+
+-- cut scenes return the number of seconds to delay before the next bit
+
+function oldManCutScene()
+	oldman = item_ph_oldman;
+	local delay = 0;
+	if oldman.cutSceneCount == 1 then
+		message( "old man", "Pull up a chair here beside me young fla'." );
+		message( "narrator", "You grab a barstool, set it beside the old man and sit on it." );
+		delay = 3;
+	elseif oldman.cutSceneCount == 2 then
+		message( "old man", "Let me tell you a story." );
+		message( "ego", "Please do." );
+		delay = 9;
+	elseif oldman.cutSceneCount == 3 then
+		message( "old man", "A farmer was in great distress as his crops had failed, and his cow had died on him. One night he told his wife to make him a fine new sack for flour before the next morning; and when it was finished he started off with it before the dawn." );
+		delay = 9;
+	elseif oldman.cutSceneCount == 4 then
+		message( "old man", "At that time there was a gentleman who had been taken by the fairies, and made an officer among them, and it was often people would see him and him riding on a white horse at dawn and in the evening." );
+		delay = 8;
+	elseif oldman.cutSceneCount == 5 then
+		message( "old man", "The poor man went down to the place where they used to see the officer, and when he came by on his horse, he asked the loan of two hundred and a half of flour, for he was in great want." );
+		delay = 7;
+	elseif oldman.cutSceneCount == 6 then
+		message( "old man", "The officer called the fairies out of a hole in the rocks where they stored their wheat, and told them to give the poor man what he was asking. Then he told him to come back and pay him in a year, and rode away." );
+		delay = 9;
+	elseif oldman.cutSceneCount == 7 then
+		message( "old man", "When the poor man got home he wrote down the day on a piece of paper, and that day year he came back and paid the officer." );
+		delay = 7;
+	elseif oldman.cutSceneCount == 8 then
+		message( "old man", "That is my story." );
+		processFunction = executeCommand;
+		activeFunction = 1;
+	end
+	oldman.cutSceneCount = oldman.cutSceneCount + 1;
+	return delay;
+end

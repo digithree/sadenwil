@@ -1,0 +1,16 @@
+-- postinit
+
+-- start game
+function startGame()
+	local room = rooms[curRoomIdx];
+	room:onEnter();
+end
+
+-- proceedure
+function emptyProcessFunction(one,two)
+end
+processFunction = executeCommand;
+processFunctionDouble = executeDoubleCommand;
+
+
+activeFunction = 1; -- 1 for normal, 2 for dialog, 3 for cut scene
